@@ -1,6 +1,6 @@
 $ContentDir = "content"
 $TemplatePath = "templates/layout.html"
-$OutputDir = "output"
+$OutputDir = "docs"
 
 if (-not (Test-Path $OutputDir)) {
     New-Item -ItemType Directory -Path $OutputDir | Out-Null
