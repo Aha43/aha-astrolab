@@ -1,0 +1,7 @@
+About the Solarquest mount
+
+It is a mount of use for solar observing only made by Sky-Watcher. Max payload 5kg (it will manage the LS60MT with H-Alpha filters and Pentax zoom or a ZWO camera)
+
+It will find the sun and track it.
+
+_img_ Solarquest.jpg Solarquest mount
