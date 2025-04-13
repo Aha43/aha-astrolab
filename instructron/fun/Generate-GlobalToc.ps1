@@ -25,8 +25,7 @@ function Generate-GlobalToc {
     }
 
     $tocHtml = "<ul>`n$tocEntries`n</ul>"
-    $globalBody = "<h1>Contents</h1>`n$tocHtml"
-    $globalHtml = $Template.Replace('{{title}}', "Contents").Replace('{{content}}', $globalBody)
+    $globalHtml = $Template.Replace('{{title}}', "Contents").Replace('{{content}}', $tocHtml)
 
     $globalIndexPath = Join-Path $OutputDir "index.html"
     Set-Content -Path $globalIndexPath -Value $globalHtml -Encoding UTF8
