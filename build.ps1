@@ -75,8 +75,6 @@ function Split-IntoBlocks {
 function Convert-TextToHtml {
     param ($text)
 
-    
-
     Write-Host("Converting text to HTML...")
 
     $blocks = Split-IntoBlocks $text
@@ -124,7 +122,7 @@ function Convert-TextToHtml {
                     $desc = $maybeSize + " " + $desc
                 }
         
-                $htmlBlocks += "<figure><img src='../../../images/$imgFile' alt='$desc' style='width:$width;' /><figcaption>$desc</figcaption></figure>"
+                $htmlBlocks += "<figure><img src='../images/$imgFile' alt='$desc' style='width:$width;' /><figcaption>$desc</figcaption></figure>"
             }
             else {
                 $htmlBlocks += "<p>[Invalid _img_ line]</p>"
@@ -165,6 +163,16 @@ function Convert-TextToHtml {
 
     return @{ Title = $title; Content = ($htmlBlocks -join "`n") }
 }
+
+# Ensure output subfolders exist
+$OutputImageDir = Join-Path $OutputDir "images"
+$OutputVideoDir = Join-Path $OutputDir "videos"
+
+if (Test-Path $OutputImageDir) { Remove-Item $OutputImageDir -Recurse -Force }
+if (Test-Path $OutputVideoDir) { Remove-Item $OutputVideoDir -Recurse -Force }
+
+Copy-Item "images" $OutputDir -Recurse
+Copy-Item "videos" $OutputDir -Recurse
 
 
 # Build list of all topics and their files (sorted)
