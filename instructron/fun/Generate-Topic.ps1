@@ -13,10 +13,22 @@ function Generate-Topic {
     }
 
     $pages = Get-ChildItem $TopicSourcePath -Filter *.txt | Sort-Object Name
+
+    # If no pages, create a placeholder .txt file
     if ($pages.Count -eq 0) {
-        Write-Host "No pages found in $TopicName"
-        return
+        $baseName = $TopicName -replace '^.*?_'  # Strip any prefix
+        $placeholderPath = Join-Path $TopicSourcePath "001_${baseName}.txt"
+        Set-Content -Path $placeholderPath -Value @"
+Work in progress
+
+This topic has not been written yet.
+"@
+        Write-Host "Created placeholder: $placeholderPath"
+
+        # Re-fetch pages after placeholder is added
+        $pages = Get-ChildItem $TopicSourcePath -Filter *.txt | Sort-Object Name
     }
+
 
     for ($i = 0; $i -lt $pages.Count; $i++) {
         $file = $pages[$i]
