@@ -124,7 +124,7 @@ function Convert-TextToHtml {
                     $desc = $maybeSize + " " + $desc
                 }
         
-                $htmlBlocks += "<figure><img src='../../images/$imgFile' alt='$desc' style='width:$width;' /><figcaption>$desc</figcaption></figure>"
+                $htmlBlocks += "<figure><img src='../images/$imgFile' alt='$desc' style='width:$width;' /><figcaption>$desc</figcaption></figure>"
             }
             else {
                 $htmlBlocks += "<p>[Invalid _img_ line]</p>"
@@ -147,7 +147,7 @@ function Convert-TextToHtml {
                 $htmlBlocks += @"
         <figure>
           <video controls style='width:$width;'>
-            <source src='../../videos/$videoFile' type='video/mp4'>
+            <source src='../videos/$videoFile' type='video/mp4'>
             Your browser does not support the video tag.
           </video>
           <figcaption>$desc</figcaption>

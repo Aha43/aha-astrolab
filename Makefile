@@ -10,5 +10,10 @@ clean:
 serve:
 	open -a "Visual Studio Code" . && sleep 1 && open http://localhost:5500/docs/
 
+open:
+	open https://aha43.github.io/aha-astrolab/
+
 # Rebuild site and preview
 preview: clean build serve
+
+
