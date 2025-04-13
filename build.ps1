@@ -124,7 +124,7 @@ function Convert-TextToHtml {
                     $desc = $maybeSize + " " + $desc
                 }
         
-                $htmlBlocks += "<figure><img src='../images/$imgFile' alt='$desc' style='width:$width;' /><figcaption>$desc</figcaption></figure>"
+                $htmlBlocks += "<figure><img src='../../../images/$imgFile' alt='$desc' style='width:$width;' /><figcaption>$desc</figcaption></figure>"
             }
             else {
                 $htmlBlocks += "<p>[Invalid _img_ line]</p>"
