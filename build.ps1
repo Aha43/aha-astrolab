@@ -72,7 +72,6 @@ function Split-IntoBlocks {
     return $blocks
 }
 
-
 function Convert-TextToHtml {
     param ($text)
 
@@ -92,7 +91,24 @@ function Convert-TextToHtml {
     $htmlBlocks = @()
     foreach ($para in $paragraphs) {
         Write-Host("Processing paragraph: $para")
-        if ($para -like "_img_*") {
+        if ($para -like "_link_*") {
+            $parts = $para -split "\s+", 3
+            if ($parts.Count -ge 3) {
+                $targetTopic = $parts[1]
+                $linkText = $parts[2]
+                $targetPath = Join-Path $ContentDir $targetTopic
+                $firstFile = Get-ChildItem $targetPath -Filter *.txt | Sort-Object Name | Select-Object -First 1
+                if ($firstFile) {
+                    $targetFile = [System.IO.Path]::GetFileNameWithoutExtension($firstFile.Name) + ".html"
+                    $htmlBlocks += "<p><a href='../$targetTopic/$targetFile'>$linkText</a></p>"
+                } else {
+                    $htmlBlocks += "<p>[Missing topic: $targetTopic]</p>"
+                }
+            } else {
+                $htmlBlocks += "<p>[Invalid _link_ syntax]</p>"
+            }
+        }
+        elseif ($para -like "_img_*") {
             $parts = $para -split "\s+", 3
             if ($parts.Count -ge 3) {
                 $imgFile = $parts[1]
