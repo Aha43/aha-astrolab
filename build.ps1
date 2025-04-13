@@ -34,7 +34,7 @@ function Convert-ToDisplayName {
             $_
         }
         elseif ($_.Length -gt 0) {
-            $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower()
+            $_.Substring(0, 1).ToUpper() + $_.Substring(1).ToLower()
         }
     }
 
@@ -90,7 +90,6 @@ function Convert-TextToHtml {
 
     $htmlBlocks = @()
     foreach ($para in $paragraphs) {
-        Write-Host("Processing paragraph: $para")
         if ($para -like "_link_*") {
             $parts = $para -split "\s+", 3
             if ($parts.Count -ge 3) {
@@ -101,24 +100,64 @@ function Convert-TextToHtml {
                 if ($firstFile) {
                     $targetFile = [System.IO.Path]::GetFileNameWithoutExtension($firstFile.Name) + ".html"
                     $htmlBlocks += "<p><a href='../$targetTopic/$targetFile'>$linkText</a></p>"
-                } else {
+                }
+                else {
                     $htmlBlocks += "<p>[Missing topic: $targetTopic]</p>"
                 }
-            } else {
+            }
+            else {
                 $htmlBlocks += "<p>[Invalid _link_ syntax]</p>"
             }
         }
         elseif ($para -like "_img_*") {
-            $parts = $para -split "\s+", 3
+            $parts = $para -split "\s+", 4
             if ($parts.Count -ge 3) {
                 $imgFile = $parts[1]
-                $desc = $parts[2]
-                $htmlBlocks += "<figure><img src='../../images/$imgFile' alt='$desc' /><figcaption>$desc</figcaption></figure>"
+                $maybeSize = $parts[2]
+                $desc = if ($parts.Count -eq 4) { $parts[3] } else { $parts[2] }
+        
+                # check if the 3rd part is a percentage
+                if ($maybeSize -match '^\d{2,3}%$') {
+                    $width = $maybeSize
+                } else {
+                    $width = "80%"  # default
+                    $desc = $maybeSize + " " + $desc
+                }
+        
+                $htmlBlocks += "<figure><img src='../../images/$imgFile' alt='$desc' style='width:$width;' /><figcaption>$desc</figcaption></figure>"
             }
             else {
                 $htmlBlocks += "<p>[Invalid _img_ line]</p>"
             }
-        }
+        }        
+        elseif ($para -like "_video_*") {
+            $parts = $para -split "\s+", 4
+            if ($parts.Count -ge 3) {
+                $videoFile = $parts[1]
+                $maybeSize = $parts[2]
+                $desc = if ($parts.Count -eq 4) { $parts[3] } else { $parts[2] }
+        
+                if ($maybeSize -match '^\d{2,3}%$') {
+                    $width = $maybeSize
+                } else {
+                    $width = "80%"
+                    $desc = $maybeSize + " " + $desc
+                }
+        
+                $htmlBlocks += @"
+        <figure>
+          <video controls style='width:$width;'>
+            <source src='../../videos/$videoFile' type='video/mp4'>
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>$desc</figcaption>
+        </figure>
+"@
+            }
+            else {
+                $htmlBlocks += "<p>[Invalid _video_ line]</p>"
+            }
+        }        
         else {
             $htmlBlocks += "<p>$para</p>"
         }
@@ -134,7 +173,6 @@ if ($topics.Count -eq 0) {
     Write-Host "No topics found in $ContentDir"
     exit
 }
-Write-Host "Found $($topics.Count) topics in $ContentDir"
 
 foreach ($topic in $topics) {
     $topicName = $topic.Name
@@ -148,7 +186,6 @@ foreach ($topic in $topics) {
         Write-Host "No pages found in $topicName"
         continue
     }
-    Write-Host "Building $topicName with $($pages.Count) pages"
 
     for ($i = 0; $i -lt $pages.Count; $i++) {
         $file = $pages[$i]
@@ -157,9 +194,6 @@ foreach ($topic in $topics) {
 
         $title = $converted.Title
         $body = $converted.Content
-
-        Write-Host "Title: $title"
-        Write-Host "Body: $body"
 
         $navLinks = @()
         if ($i -gt 0) {
@@ -178,8 +212,6 @@ foreach ($topic in $topics) {
 
         $finalHtml = $layout -replace '\{\{title\}\}', $title
         $finalHtml = $finalHtml -replace '\{\{content\}\}', $body
-
-        Write-Host "Final HTML: $finalHtml"
 
         $outputPath = Join-Path $topicPath ([System.IO.Path]::GetFileNameWithoutExtension($file.Name) + ".html")
         Set-Content -Path $outputPath -Value $finalHtml -Encoding UTF8
@@ -215,4 +247,3 @@ $globalIndexPath = Join-Path $OutputDir "index.html"
 Set-Content -Path $globalIndexPath -Value $globalHtml -Encoding UTF8
 
 Write-Host "Built global TOC: $globalIndexPath"
-

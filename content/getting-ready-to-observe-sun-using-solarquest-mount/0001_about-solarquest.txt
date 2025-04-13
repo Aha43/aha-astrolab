@@ -11,7 +11,7 @@ small tracking scope of the mount.
 
 More below the picture.
 
-_img_ Solarquest.jpg Solarquest mount
+_img_ Solarquest.jpg 50% Solarquest mount
 
 This topic is about getting the Solarquest ready for mounting a solar telescope (either a dedicated solar
 telescope or a general telescope with the needed filters installed to make it save for observing the sum).
