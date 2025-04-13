@@ -24,7 +24,8 @@ function Generate-Topic {
         $converted = Convert-TextToHtml $raw
 
         $title = $converted.Title
-        $body = $converted.Content
+        $homeLink = "<p style='text-align: right;'><a href='../index.html'>🏠 Home</a></p>"
+        $body = "$homeLink`n$($converted.Content)"
 
         $navLinks = @()
         if ($i -gt 0) {
