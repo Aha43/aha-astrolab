@@ -1,6 +1,6 @@
 # Build site from source text
 build:
-	pwsh -NoProfile ./build.ps1
+	pwsh -NoProfile ./instructron/build.ps1
 
 # Clean generated output
 clean:
