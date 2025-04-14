@@ -3,6 +3,13 @@ function Convert-TextToHtml {
 
     Write-Host("Converting text to HTML...")
 
+    if (-not $text -or -not $text.Trim()) {
+        return @{
+            Title = "Work in progress"
+            Content = "<h1>Work in progress</h1><p>This page has not been written yet.</p>"
+        }
+    }    
+
     $blocks = Split-IntoBlocks $text
 
     if ($blocks.Count -eq 0) {
