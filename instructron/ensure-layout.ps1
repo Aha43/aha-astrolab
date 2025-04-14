@@ -96,6 +96,9 @@ This page has not been written yet.
             $matching = Get-ChildItem $topicPath -Filter "*_$fileName.txt"
             foreach ($m in $matching) {
                 if ($m.Name -ne $finalName) {
+                    if (Test-Path $filePath) {
+                        Remove-Item $filePath -Force
+                    }
                     Rename-Item -Path $m.FullName -NewName $finalName
                 }
             }
