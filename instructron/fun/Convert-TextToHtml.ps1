@@ -5,7 +5,7 @@ function Convert-TextToHtml {
 
     if (-not $text -or -not $text.Trim()) {
         return @{
-            Title = "Work in progress"
+            Title   = "Work in progress"
             Content = "<h1>Work in progress</h1><p>This page has not been written yet.</p>"
         }
     }    
@@ -15,6 +15,14 @@ function Convert-TextToHtml {
     if ($blocks.Count -eq 0) {
         Write-Host("No blocks found in text.")
         return
+    }
+
+    # Handle status: done / wip metadata
+    $firstBlock = $blocks[0]
+    if ($firstBlock -match '^status:\s*(.+)$') {
+        $status = $Matches[1].ToLower()
+        # Remove the block entirely
+        $blocks = $blocks[1..($blocks.Count - 1)]
     }
     $title = $blocks[0]
     $paragraphs = $blocks[1..($blocks.Count - 1)]

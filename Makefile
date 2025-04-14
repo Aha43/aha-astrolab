@@ -16,4 +16,5 @@ open:
 # Rebuild site and preview
 preview: clean build serve
 
-
+what:
+	pwsh -NoProfile ./instructron/what.ps1
