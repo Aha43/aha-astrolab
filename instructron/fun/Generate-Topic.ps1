@@ -58,6 +58,9 @@ This topic has not been written yet.
         $finalHtml = $finalHtml -replace '\{\{content\}\}', $body
 
         $outputFileName = [System.IO.Path]::GetFileNameWithoutExtension($file.Name) + ".html"
+
+
+
         $outputPath = Join-Path $topicOutputPath $outputFileName
         Set-Content -Path $outputPath -Value $finalHtml -Encoding UTF8
 

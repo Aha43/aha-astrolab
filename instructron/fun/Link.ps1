@@ -4,6 +4,8 @@ function Convert-LinkLineToHtml {
         [string]$contentDir
     )
 
+    Write-Host "Converting link line to HTML: $line"
+
     $parts = $line -split "\s+", 3
     if ($parts.Count -ge 3) {
         $targetTopic = $parts[1]

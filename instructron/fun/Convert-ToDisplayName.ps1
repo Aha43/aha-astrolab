@@ -10,10 +10,11 @@ function Convert-ToDisplayName {
     }
 
     # Remove prefix if name contains underscore
-    if ($rawName -contains '_') {
+    if ($rawName -like '*_*') {
         $parts = $rawName -split '_', 2
         $rawName = $parts[1]
     }
+    Write-Host "rawName: $rawName"
 
     # Replace dashes/underscores with spaces
     $cleaned = $rawName -replace '[-_]', ' '

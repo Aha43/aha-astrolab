@@ -19,6 +19,7 @@ function Generate-GlobalToc {
 
             # Use the folder name as display title
             $displayTitle = Convert-ToDisplayName $topicName
+            Write-Host "Adding TOC entry for ${topicName}: ${displayTitle}"
 
             $tocEntries += "<li><a href='$relativeLink'>$displayTitle</a></li>"
         }
