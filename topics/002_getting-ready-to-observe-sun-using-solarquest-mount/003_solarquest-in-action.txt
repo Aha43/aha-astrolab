@@ -1,5 +1,0 @@
-status: done
-
-Solarquest in action
-
-_video_ solarquest-scan.mp4 50% SolarQuest finds the Sun
