@@ -5,7 +5,7 @@
 . $PSScriptRoot/fun/Split-IntoBlocks.ps1
 . $PSScriptRoot/fun/Generate-GlobalToc.ps1
 
-$ContentDir = "content"
+$ContentDir = "topics"
 $TemplatePath = "templates/layout.html"
 $OutputDir = "docs"
 
