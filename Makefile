@@ -21,3 +21,6 @@ what:
 
 layout:
 	pwsh -NoProfile ./instructron/get-layout.ps1
+
+ensure:
+	pwsh -NoProfile ./instructron/ensure-layout.ps1
