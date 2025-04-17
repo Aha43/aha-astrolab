@@ -18,22 +18,19 @@ function Generate-Topic {
     if ($pages.Count -eq 0) {
         $baseName = $TopicName -replace '^.*?_'  # Strip any prefix
         $placeholderPath = Join-Path $TopicSourcePath "001_${baseName}.txt"
-        Set-Content -Path $placeholderPath -Value @"
-Work in progress
-
-This topic has not been written yet.
-"@
+        #$placeholderText = "Work in progress: $baseName"
+        #Set-Content -Path $placeholderPath -Value ""
+        New-Item -ItemType File -Path $placeholderPath
         Write-Host "Created placeholder: $placeholderPath"
 
         # Re-fetch pages after placeholder is added
         $pages = Get-ChildItem $TopicSourcePath -Filter *.txt | Sort-Object Name
     }
 
-
     for ($i = 0; $i -lt $pages.Count; $i++) {
         $file = $pages[$i]
         $raw = Get-Content $file.FullName -Raw
-        $converted = Convert-TextToHtml $raw
+        $converted = Convert-TextToHtml -Text $raw -ContentDir $ContentDir
 
         $title = $converted.Title
         $homeLink = "<p style='text-align: right;'><a href='../index.html'>🏠 Home</a></p>"
@@ -58,8 +55,6 @@ This topic has not been written yet.
         $finalHtml = $finalHtml -replace '\{\{content\}\}', $body
 
         $outputFileName = [System.IO.Path]::GetFileNameWithoutExtension($file.Name) + ".html"
-
-
 
         $outputPath = Join-Path $topicOutputPath $outputFileName
         Set-Content -Path $outputPath -Value $finalHtml -Encoding UTF8

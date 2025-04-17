@@ -1,16 +1,22 @@
 function Convert-TextToHtml {
-    param ($text)
+    param (
+        [string]$Text,
+        [string]$ContentDir
+    )
 
     Write-Host("Converting text to HTML...")
 
-    if (-not $text -or -not $text.Trim()) {
+    Write-Host("Text: $Text")
+    Write-Host("ContentDir: $ContentDir")
+
+    if (-not $Text -or -not $Text.Trim()) {
         return @{
-            Title   = "Work in progress"
-            Content = "<h1>Work in progress</h1><p>This page has not been written yet.</p>"
+            Title   = "<h1>Work in progress: $ContentDir<h1>"
+            Content = " "
         }
     }    
 
-    $blocks = Split-IntoBlocks $text
+    $blocks = Split-IntoBlocks $Text
 
     if ($blocks.Count -eq 0) {
         Write-Host("No blocks found in text.")
