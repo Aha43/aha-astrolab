@@ -65,41 +65,59 @@ foreach ($topic in $layoutMap.Keys) {
         New-Item -ItemType Directory -Path $topicPath | Out-Null
     }
 
-    # Remove .txt files not listed in layout
     $desiredFiles = $layoutMap[$topic]
-    $existingFiles = Get-ChildItem $topicPath -Filter *.txt
-    foreach ($file in $existingFiles) {
-        $clean = ([System.IO.Path]::GetFileNameWithoutExtension($file.Name) -replace '^.*?_')
-        if ($clean -notin $desiredFiles) {
-            Write-Host "Removing file not in layout: $file.Name"
-            Remove-Item $file.FullName
-        }
-    }
 
-    # Create/rewrite files with correct prefix
-    for ($i = 0; $i -lt $desiredFiles.Count; $i++) {
-        $fileName = $desiredFiles[$i]
-        $filePrefix = "{0:D3}" -f ($i + 1)
-        $finalName = "${filePrefix}_$fileName.txt"
-        $filePath = Join-Path $topicPath $finalName
+    if ($desiredFiles.Count -eq 0) {
+        # No files listed for this topic, create default intro file
+        $filePrefix = "001"
+        $fileName = "${filePrefix}_${topic}.txt"
+        $filePath = Join-Path $topicPath $fileName
 
         if (-not (Test-Path $filePath)) {
-            Write-Host "Creating placeholder: $filePath"
+            Write-Host "Creating default intro file: $filePath"
             Set-Content -Path $filePath -Value @"
 Work in progress
 
 This page has not been written yet.
 "@ -Encoding UTF8
         }
-        else {
-            # Rename if wrong prefix
-            $matching = Get-ChildItem $topicPath -Filter "*_$fileName.txt"
-            foreach ($m in $matching) {
-                if ($m.Name -ne $finalName) {
-                    if (Test-Path $filePath) {
-                        Remove-Item $filePath -Force
+    }
+    else {
+        # Remove .txt files not listed in layout
+        $existingFiles = Get-ChildItem $topicPath -Filter *.txt
+        foreach ($file in $existingFiles) {
+            $clean = ([System.IO.Path]::GetFileNameWithoutExtension($file.Name) -replace '^.*?_')
+            if ($clean -notin $desiredFiles) {
+                Write-Host "Removing file not in layout: $file.Name"
+                Remove-Item $file.FullName
+            }
+        }
+
+        # Create/rewrite files with correct prefix
+        for ($i = 0; $i -lt $desiredFiles.Count; $i++) {
+            $fileName = $desiredFiles[$i]
+            $filePrefix = "{0:D3}" -f ($i + 1)
+            $finalName = "${filePrefix}_$fileName.txt"
+            $filePath = Join-Path $topicPath $finalName
+
+            if (-not (Test-Path $filePath)) {
+                Write-Host "Creating placeholder: $filePath"
+                Set-Content -Path $filePath -Value @"
+Work in progress
+
+This page has not been written yet.
+"@ -Encoding UTF8
+            }
+            else {
+                # Rename if wrong prefix
+                $matching = Get-ChildItem $topicPath -Filter "*_$fileName.txt"
+                foreach ($m in $matching) {
+                    if ($m.Name -ne $finalName) {
+                        if (Test-Path $filePath) {
+                            Remove-Item $filePath -Force
+                        }
+                        Rename-Item -Path $m.FullName -NewName $finalName
                     }
-                    Rename-Item -Path $m.FullName -NewName $finalName
                 }
             }
         }
