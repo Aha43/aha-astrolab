@@ -1,7 +1,5 @@
 LS60MT Telescope Configurations
 
-The LS60MT primary use is to observe / imagine the sun in the H-Alpha spectrum of light but it can also be used to observe / imagine the sun in white
-light with the H-Alpha filters removed and the Lunt Herschel Diagonal installed or as a regular night telescope using the William Optics Diagonal.
+The LS60MT is primarily used to observe and image the Sun in the H-Alpha spectrum. It can also be configured for white light solar observation by removing the H-Alpha filters and installing the Lunt Herschel Diagonal, or used as a regular nighttime telescope with the William Optics Diagonal.
 
-This topic is about showing the different configurations, <i>it is particular important for safety (avoiding damaging eyes or cameras) to be able to 
-know when it is safe to use the LS60MT to observe / imagine the sun</i>.
+This topic provides an overview of the different configurations. It is particularly important for safety to understand when the LS60MT is properly configured for safe solar observation and imaging.

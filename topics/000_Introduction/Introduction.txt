@@ -1,0 +1,7 @@
+aha-astrolab
+
+The aha-astrolab is a personal manual for the astronomical equipment currently in use. The purpose of this site is to serve as a reference for the setup, operation, and capabilities of the gear as it stands today.
+
+The primary focus is solar observation and imaging, with some secondary use for nighttime visual astronomy. Equipment covered includes the Lunt LS60MT solar telescope, SolarQuest and AZ-GTi mounts, ASI174MM camera, and supporting accessories such as the Pentax zoom eyepiece and the Lunt Herschel prism.
+
+The site is structured for practical use, with gear-specific sections, setup guides, and session workflows. It reflects the current operational state of aha-astrolab and is intended both for personal use and as a reference for others who may operate the equipment.
