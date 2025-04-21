@@ -1,0 +1,17 @@
+LS60MT Night Configuration
+
+This is how the LS60MT telescope look like when ready to be used as a regular telescope. 
+<i>In this configuration it must never be pointed to the sun</i>. 
+Be sure to read the description below the picture.
+
+_img_ 001120_ls60mt_with_wo-2-star-diagonal_with_wo-2-to-1-point-25-reducer.jpg 40% LS60MT Ready For Night Observing / Imaging
+
+<ul>
+    <li>
+        Notice no solar filters are mounted, <b>telescope must not be used for any solar work</b>.
+    </li>
+    <li>
+        The William Optics Diagonal is maounted with its 2 inch to 1.25 inch reducer which is needed to be able to use the Pentax Zoom.
+        This reducer is also used as previous topic page show to use the Lunt Herschel Diagonal.
+    </li>
+</ul>

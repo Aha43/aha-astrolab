@@ -19,8 +19,8 @@ preview: clean build serve
 what:
 	pwsh -NoProfile ./instructron/what.ps1
 
-layout:
-	pwsh -NoProfile ./instructron/get-layout.ps1
+# layout:
+# 	pwsh -NoProfile ./instructron/get-layout.ps1
 
-ensure:
-	pwsh -NoProfile ./instructron/ensure-layout.ps1
+# ensure:
+# 	pwsh -NoProfile ./instructron/ensure-layout.ps1

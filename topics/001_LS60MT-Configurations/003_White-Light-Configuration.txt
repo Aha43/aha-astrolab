@@ -1,0 +1,23 @@
+LS60MT White Light Solar Configuration
+
+This is how the LS60MT look when ready for observing or imagine the sun in white light. Be sure to read the 
+description below the picture. 
+
+_img_ 001030_ls60mt_no-alpha-filters-but-with_wo-2-to-1-point-25-reducer_and_lunt-1-point-25-herschel-diagonal.jpg 40% LS60MT Ready For White Light Solar Observing / Imaging
+
+<ul>
+    <li>
+        Notice that the etalon filter module has been removed.
+    </li>
+    <li>
+        What makes it safe to observe the sun is the Lunt Herschel Diagonal. It is recognized by being black with the Lunt cactus logo and the orange
+        plate warning about hot area.
+    </li>
+    <li>
+        If one look carefully one see that a 2 inch to 1.25 inch reducer is used to attach the diagonal to the focuser.
+    </li>
+    <li>
+        The Baader Single Polarising Filter should be used with the Pentax Zoom so not blended doing visual observing (it is not dangerous to not
+        use the polarising filter but the light is to bright for comfortable observing).
+    </li>
+</ul>
