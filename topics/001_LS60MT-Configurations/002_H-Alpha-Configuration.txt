@@ -1,6 +1,6 @@
 LS60MT H-Alpha Solar Configuration
 
-This shows the LS60MT configured for observing and imaging the Sun in the H-Alpha spectrum.
+The LS60MT configured for observing and imaging the Sun in the H-Alpha spectrum.
 Be sure to read the description below the image.
 
 _img_ 001100_ls60mt_with_etalon_and_b1200-diagonal_mounted.jpg 40% LS60MT Ready For H-Alpha Solar Observing / Imaging
