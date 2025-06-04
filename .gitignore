@@ -1,0 +1,15 @@
+# OS & editor junk
+.DS_Store
+Thumbs.db
+
+# PowerShell artifacts
+*.ps1~           # backup files if you use an editor that does this
+*.ps1.save       # autosaves (optional)
+
+# Optional: exclude output if you rebuild it every time
+# Comment this out if you want to track built HTML too
+/output/
+
+# Optional: log/debug/output files you might add later
+*.log
+*.bak

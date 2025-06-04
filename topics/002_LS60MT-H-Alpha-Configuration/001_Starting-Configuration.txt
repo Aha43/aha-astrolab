@@ -1,0 +1,6 @@
+Starting Configuration
+
+The image shows LS60MT with out any solar filter (night use), this topic shows how to configure for H-Alpha observation and imagining
+(installing H-Alpha filters).
+
+_img_ 001090_ls60mt_no-filters_no-diagonal.jpg 30% LS60MT With no solar filters mounted

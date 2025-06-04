@@ -1,0 +1,13 @@
+LS60MT H-Alpha Solar Configuration
+
+The LS60MT configured for observing and imaging the Sun in the H-Alpha spectrum.
+Be sure to read the description below the image.
+
+_img_ 001100_ls60mt_with_etalon_and_b1200-diagonal_mounted.jpg 40% LS60MT Ready For H-Alpha Solar Observing / Imaging
+
+Two filters must be installed for safe use: the B1200 blocking filter and the pressure-tuned etalon filter. Both are easy to recognize:
+
+<ul> 
+    <li>The B1200 blocking filter is located inside the orange and white diagonal marked with the USA flag.</li>
+    <li> The etalon filter is the red module with the "LUNT SOLAR SYSTEM" plate and the large pressure-tuning knob.</li>
+</ul>
