@@ -1,0 +1,7 @@
+Remove Focuser From The Etalon Module
+
+Loosen the three thumb screws securing the focuser to the rear of the Etalon module, and remove the focuser.
+
+Attach the flat dust cap to the rear of the Etalon using the same thumb screws. This protects the internal surfaces during storage or when the Etalon is not in use.
+
+_img_ 001020_ls60mt_etalon_focuser_removed.jpg 30% Focuser Removed

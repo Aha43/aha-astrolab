@@ -1,0 +1,7 @@
+Reattach the Focuser
+
+Mount the focuser directly onto the telescope and secure it using the three thumb screws.
+
+Ensure all screws are properly tightened before proceeding.
+
+_img_ 001090_ls60mt_no-filters_no-diagonal.jpg 30% Focuser Mounted On scope

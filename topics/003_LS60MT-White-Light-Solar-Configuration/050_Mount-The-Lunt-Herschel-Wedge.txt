@@ -1,0 +1,11 @@
+Mount the Lunt Herschel Wedge
+To mount the 1.25" Lunt Herschel wedge to the 2" focuser, first insert the 2" to 1.25" reducer into the focuser.
+
+Use the reducer normally found on the William Optics diagonal. It should still be attached to the diagonal or located with it.
+
+Once the reducer is in place, insert the Herschel wedge and secure it with the thumb screw.
+
+Note: With the reducer removed, the WO diagonal is left without a 2" dust cap. The 2" cap from the focuser can be used to protect the WO diagonal during this configuration.
+
+Once the wedge is installed, it is best to mount the telescope on the tripod before attaching any viewing or imaging equipment.
+This applies especially to heavier accessories such as the Pentax Zoom, which should always be mounted when the scope is securely in place.

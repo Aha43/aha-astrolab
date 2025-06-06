@@ -1,0 +1,9 @@
+Remove The Etalon Module
+
+Loosen the three thumb screws securing the Etalon module to the telescope and carefully remove it.
+
+Attach the front dust cap to protect the optical surface.
+
+Store the Etalon module and the B1200 blocking filter in their designated storage locations.
+
+_img_ 001130_ls60mt-etalon-and-focuser-removed.jpg 30% Etalon Module Removed
