@@ -12,3 +12,7 @@ When using the T2 connection, it is best to connect the USB cable after the came
 However, when using the 1.25" eyepiece adapter, connecting the USB cable before insertion can help gravity rotate the camera into a natural and stable orientation.
 
 This manual favors T2 mounting as the default unless specific hardware requires a 1.25" interface.
+
+_img_ 002040_zwo-asi-174-mm_sensor-side-down_asi-1-point-25-adapter_t2-side-down_no-cap.jpg 30% The camera (Red) and its T2-1.25" adapter (black)
+
+_img_ 002060_zwo-asi-174-mm_with_asi-1-point-25-adapter_no-cap_not-screwed.jpg 30% The camera (red) with the T2-1.25" adapter (black) mounted: Now can be mounted to any 1.25" eyepiece holder

@@ -4,3 +4,7 @@ Mount the ASI174MM directly to the B1200 blocking filter diagonal using the T2 t
 
 No additional adapters are needed.
 This configuration provides a full-disk solar image (depending on seeing and camera spacing) and uses the most stable mechanical interface.
+
+_img_ 002000_mounting_asi-174-mm_t2_B1200-diagonal.jpg 30% Mounting the camera on B1200 blocking diagonal using T2 threads
+
+_img_ 002050_zwo-asi-174-mm_t2_connected_b1200-diagonal.jpg 30% The camera mounted

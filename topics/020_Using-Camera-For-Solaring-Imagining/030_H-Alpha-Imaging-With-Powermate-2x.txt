@@ -1,0 +1,8 @@
+H-Alpha Imaging with Powermate 2x
+
+Insert the Powermate 2x into the B1200 diagonal as usual.
+
+Attach the T2 adapter to the Powermate and thread the ASI174MM directly onto it.
+
+This provides a magnified view of solar surface details. As with the previous configuration, 
+the entire camera train remains fully threaded for stability.

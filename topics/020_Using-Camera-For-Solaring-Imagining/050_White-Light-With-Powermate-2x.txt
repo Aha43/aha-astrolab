@@ -1,0 +1,8 @@
+White Light With Powermate 2x
+
+Insert the Powermate 2x into the Lunt Herschel wedge.
+
+Attach the T2 adapter to the Powermate and thread the ASI174MM to it.
+
+The connection between the Herschel wedge and Powermate is eyepiece-style,
+but the camera and optical train after that remain fully threaded.
