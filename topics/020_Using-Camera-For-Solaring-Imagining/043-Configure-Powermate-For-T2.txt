@@ -1,0 +1,21 @@
+Configuring the Powermate 2x for T2 Mounting
+
+The Powermate 2x consists of two parts:
+
+The optical element
+
+The removable eyepiece holder
+
+To prepare the Powermate for use with the ASI174MM via T2 threads, unscrew the eyepiece holder and replace it with the T2 adapter ring.
+
+If the T2 adapter doesn’t seem to fit at first, check its orientation. The correct side to thread in is the one where, when mounted, the printed text on both parts is not upside down relative to each other.
+
+Once attached, the Powermate is ready for secure, threaded connection to the camera.
+
+This is the configuration of the Powermate 2x used in the next two use cases.
+
+_img_ 0081100_Powermate-2x_And_T2-Adapter.jpg 30% The Powermate 2x (long cylinder) And The T2 Adapter Ring
+
+_img_ 0081200_Powermate-2x_With_Eyepiece-holder_Unscrewed_And_T2-Adapter.jpg 30% The Powermate 2x With Eyepiece Holder Unscrewed
+
+_img_ 0081300_Powermate-2x_With_T2-Adapter_Screwed-In_And_Eeyepiece-holder.jpg 30% The Powermate 2x With T2 Adapter Ring Screwed In

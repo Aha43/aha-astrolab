@@ -4,4 +4,4 @@ Mount the focuser directly onto the telescope and secure it using the three thum
 
 Ensure all screws are properly tightened before proceeding.
 
-_img_ 001090_ls60mt_no-filters_no-diagonal.jpg 30% Focuser Mounted On scope
+_img_ 001090_ls60mt_no-filters_no-diagonal.jpg 30% Focuser Mounted On Scope
